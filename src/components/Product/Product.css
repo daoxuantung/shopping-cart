@@ -1,0 +1,29 @@
+.Product {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.Product .card {
+    border: none;
+}
+
+.Product:hover {
+    transform: translateY(-10px);
+}
+
+.Product .card .card-body {
+    padding: 0.5rem;
+}
+
+.Product .card-title {
+    margin-bottom: 0.25rem;
+}
+
+.Product .card .card-body p {
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.Product-rating i {
+    color: #ff523b;
+}

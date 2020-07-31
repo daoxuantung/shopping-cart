@@ -1,0 +1,37 @@
+.FeaturedProduct-title {
+    text-align: center;
+    font-weight: 600;
+    margin: 7rem 0;
+    position: relative;
+}
+
+.FeaturedProduct-title::after {
+    content: "";
+    width: 5rem;
+    height: 0.25rem;
+    background-color: #ff2e2e;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.FeaturedProduct .row {
+    justify-content: space-between;
+}
+
+.FeaturedProduct .row .col-md-3 {
+    flex-basis: 18rem;
+}
+
+@media screen and (max-width: 576px) {
+    .FeaturedProduct .row {
+        margin: 0;
+    }
+
+    .FeaturedProduct .row .col-md-3 {
+        margin: 1rem;
+        padding: 0;
+        flex-basis: 100%;
+    }
+}

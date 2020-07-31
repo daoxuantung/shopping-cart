@@ -1,0 +1,90 @@
+.Banner {
+    padding: 5rem 10rem 3rem 12rem;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 214, 214, 1) 100%);
+}
+
+.Banner .row {
+    width: 100%;
+}
+
+.Banner .col-md-6:last-child {
+    height: 32rem;
+}
+
+.col-md-6 h1 {
+    font-size: 3rem;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+.col-md-6 p {
+    font-size: 1rem;
+    line-height: 20px;
+    margin-top: 1rem;
+}
+
+.col-md-6 .btn {
+    background-color: #ff4e4e;
+    color: #fff;
+    padding: 0.5rem 1.75rem;
+    margin: 1rem 0;
+    border-radius: 20px;
+    border: 0;
+    transition: 0.5s;
+}
+
+.col-md-6 .btn:focus {
+    box-shadow: none !important;
+}
+
+.col-md-6 .btn:hover {
+    background-color: #ff2e2e;
+}
+
+.col-md-6 .btn:active,
+.col-md-6 .btn:visited {
+    background-color: #ff6e6e !important;
+}
+
+.col-md-6 img {
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .Banner {
+        padding: 5rem 2rem 0 2rem;
+    }
+
+    .Banner .col-md-6:last-child {
+        height: 28rem;
+    }
+
+    .col-md-6 h1 {
+        font-size: 2.75rem;
+    }
+
+    .col-md-6 p {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Banner {
+        padding: 5rem 1rem 4rem 1rem;
+    }
+
+    .Banner .col-md-6:last-child {
+        height: 20rem;
+    }
+
+    .col-md-6 h1 {
+        font-size: 2rem;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Banner .row {
+        flex-direction: column-reverse;
+    }
+}
