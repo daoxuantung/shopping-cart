@@ -4,6 +4,9 @@ import {
     CardTitle
 } from 'reactstrap';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+
 import './Product.css';
 
 const Product = () => {
@@ -13,12 +16,12 @@ const Product = () => {
                 <CardImg top width="100%" src="http://lorempixel.com/150/200/" alt="" />
                 <CardBody>
                     <CardTitle>Red Printed T-shirt</CardTitle>
-                    <div className="Product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                    <div className="rating">
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStarHalfAlt} />
                     </div>
                     <p>$50.00</p>
                 </CardBody>

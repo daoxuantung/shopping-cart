@@ -87,4 +87,12 @@
     .Banner .row {
         flex-direction: column-reverse;
     }
+
+    .Banner-content {
+        text-align: center;
+    }
+
+    .Banner p {
+        text-align: justify;
+    }
 }

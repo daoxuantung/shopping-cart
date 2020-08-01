@@ -1,0 +1,40 @@
+.Offer {
+    margin-top: 5rem;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 214, 214, 1) 100%);
+}
+
+.Offer-image {
+    padding: 3rem;
+}
+
+.Offer-content h6 {
+    font-size: 18px;
+}
+
+.Offer-text {
+    color: #555;
+    width: 80%;
+}
+
+@media screen and (max-width: 1024px) {
+    .Offer-text {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Offer {
+        margin-top: 2rem;
+    }
+
+    .Offer-content {
+        padding: 0 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .Offer-text {
+        width: 100%;
+        text-align: justify;
+    }
+}

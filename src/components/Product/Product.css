@@ -24,6 +24,7 @@
     margin-top: 0.25rem;
 }
 
-.Product-rating i {
+.rating .fa-star,
+.rating .fa-star-half-alt {
     color: #ff523b;
 }

@@ -30,7 +30,7 @@
     }
 
     .FeaturedProduct .row .col-md-3 {
-        margin: 1rem;
+        margin: 2rem 1rem;
         padding: 0;
         flex-basis: 100%;
     }
