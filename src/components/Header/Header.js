@@ -22,16 +22,16 @@ const Header = (props) => {
           renders the first one that matches the current URL. */}
         </Container>
         <Switch>
-          <Route path="/cart">
+          <Route path="/shopping-cart/cart">
             <Cart />
           </Route>
-          <Route path="/about">
+          <Route path="/shopping-cart/about">
             <About />
           </Route>
-          <Route path="/products">
+          <Route path="/shopping-cart/products">
             <Products />
           </Route>
-          <Route path="/">
+          <Route path="/shopping-cart">
             <Home />
           </Route>
         </Switch>
