@@ -10,6 +10,22 @@
 
 .nav-item {
     margin-left: 1rem;
+    position: relative;
+}
+
+.nav-item:after {
+    content: "";
+    width: 0;
+    height: 0.5px;
+    background-color: #ff4e4e;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s;
+}
+
+.nav-item:hover:after {
+    width: 100%;
 }
 
 .nav-link {
@@ -42,6 +58,7 @@
 
 .navbar-nav .nav-item .is-active {
     color: #ff4e4e !important;
+    border-bottom: 1px solid#ff4e4e;
 }
 
 @media screen and (max-width: 767px) {
@@ -74,5 +91,13 @@
 
     .Menubar-cart {
         margin: auto 1rem auto auto;
+    }
+
+    .nav-item:hover:after {
+        width: 0;
+    }
+
+    .navbar-nav .nav-item .is-active {
+        border-bottom: none;
     }
 }

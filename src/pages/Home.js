@@ -5,6 +5,8 @@ import FeaturedProduct from '../components/FeaturedProduct/FeaturedProduct';
 import LastedProduct from '../components/LastedProduct/LastedProduct';
 import Offer from '../components/Offer/Offer';
 import Testimonial from '../components/Testimonial/Testimonial';
+import Brand from '../components/Brand/Brand';
+import Footer from '../components/Footer/Footer';
 
 function Home() {
     const Images = [
@@ -21,6 +23,8 @@ function Home() {
             <LastedProduct />
             <Offer />
             <Testimonial />
+            <Brand />
+            <Footer />
         </main>
     )
 }

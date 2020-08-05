@@ -1,0 +1,85 @@
+.Footer {
+    background-color: #000;
+    padding: 3.75rem 0 2.75rem;
+    margin-top: 7.5rem;
+}
+
+.Footer p {
+    font-size: 0.875rem;
+    color: #8a8a8a;
+}
+
+.Footer h4 {
+    color: #fff;
+    margin-bottom: 1.25rem;
+}
+
+.Footer .col-lg-4:nth-child(2) {
+    text-align: center;
+}
+
+.Footer .col-lg-4:nth-child(2) img {
+    width: 14rem;
+    margin-bottom: 1.4rem;
+}
+
+.Footer .col-lg-4:nth-child(1) {
+    padding: 0;
+}
+
+.Footer-logo {
+    margin-top: 1.5rem;
+}
+
+.Footer-logo img {
+    width: 10rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+hr {
+    height: 1px;
+    background-color: #8a8a8a;
+    margin: 0.4rem 0 1rem;
+}
+
+.copyright {
+    text-align: center;
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .Footer-logo img {
+        width: 9rem;
+    }
+    .Footer-logo {
+        margin-top: 1.75rem;
+    }
+
+    .Footer h4 {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Footer .col-lg-4:nth-child(2) img {
+        width: 11rem;
+    }
+
+    .Footer-logo img {
+        width: 8rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Footer .col-lg-4:nth-child(1) {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .Footer-logo img {
+        width: 12rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

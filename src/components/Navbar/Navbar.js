@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import classNames from 'classnames';
 import CartLogo from '../../images/cart.png';
 import './Navbar.css';

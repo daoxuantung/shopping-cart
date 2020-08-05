@@ -1,0 +1,29 @@
+.Brand {
+    margin: 2.5rem auto;
+}
+
+.Brand .col-md-2 {
+    flex-basis: 10rem;
+    padding: 0;
+}
+
+.Brand .col-md-2 img {
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.Brand .col-md-2:hover img {
+    filter: grayscale(0);
+}
+
+@media screen and (max-width: 576px) {
+    .Brand .col-md-2 {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .Brand .col-md-2 img {
+        width: 50%;
+    }
+}
