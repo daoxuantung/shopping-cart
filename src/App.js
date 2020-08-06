@@ -5,6 +5,7 @@ import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
+import Products from './pages/Products';
 
 import { Container } from 'reactstrap';
 
@@ -56,9 +57,4 @@ function About() {
   )
 }
 
-function Products() {
-  return (
-    <div ></div>
-  )
-}
 

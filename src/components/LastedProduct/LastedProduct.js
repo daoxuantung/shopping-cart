@@ -7,7 +7,7 @@ import '../FeaturedProduct/FeaturedProduct.css';
 const LastedProduct = () => {
     return (
         <Container className="FeaturedProduct">
-            <h3 className="FeaturedProduct-title">Lasted Products</h3>
+            <h3 className="title">Lasted Products</h3>
             <Row>
                 <Col md="3"> <Product /></Col>
                 <Col md="3"> <Product /></Col>

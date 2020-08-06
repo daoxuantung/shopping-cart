@@ -1,13 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Footer from '../components/Footer/Footer';
 
-class Products extends Component {
-    render() {
-        return (
-            <div>
+import ProductSection from '../components/ProductSection/ProductSection';
+import ProductTitle from '../components/ProductTitle/ProductTitle';
+import { ProductProvider } from '../contexts/Product';
+import PaginationProduct from '../components/Pagination/Pagination';
 
-            </div>
-        );
-    }
-}
+const Products = () => {
+    return (
+        <div className="Products">
+            <ProductTitle />
+            <ProductProvider>
+                <ProductSection />
+            </ProductProvider>
+            <PaginationProduct />
+            <Footer />
+        </div>
+    );
+};
 
 export default Products;

@@ -5,6 +5,7 @@
 
 .Product .card {
     border: none;
+    margin-bottom: 3rem;
 }
 
 .Product:hover {

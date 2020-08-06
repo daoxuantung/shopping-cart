@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
-.ReactStickyHeader_fixed {
-  background: #fff;
+.title {
+  text-align: center;
+  font-weight: 600;
+  margin: 3rem 0 7rem;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  width: 5rem;
+  height: 0.25rem;
+  background-color: #ff2e2e;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }

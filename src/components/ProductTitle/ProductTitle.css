@@ -1,0 +1,35 @@
+.ProductContent {
+    padding: 0;
+    margin: 5rem auto 2rem;
+    padding: 0 1rem;
+}
+
+.ProductContent-title {
+    margin: 0 !important;
+    text-align: start;
+}
+
+.ProductContent-title::after {
+    width: 0;
+    height: 0;
+}
+
+.ProductContent .row .col {
+    padding: 0;
+}
+
+.ProductContent .row .col .form-group {
+    width: 11rem;
+    margin: 0;
+    margin-left: auto;
+    margin-top: 5rem;
+}
+
+.ProductContent .row .col .form-group .form-control {
+    border-radius: 0;
+    border: 1px solid #ff523b;
+}
+
+.ProductContent .row .col .form-group .form-control:focus {
+    box-shadow: none;
+}

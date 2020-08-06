@@ -1,0 +1,26 @@
+.PaginationProduct {
+    margin-top: 4rem;
+}
+
+.PaginationProduct nav {
+    margin: 0 auto;
+}
+
+.PaginationProduct nav ul {
+    justify-content: center;
+}
+
+.page-link {
+    color: #000;
+    border: 1px solid #ff523b;
+    width: 3.75rem;
+}
+
+.page-link:focus {
+    box-shadow: none;
+}
+
+.page-item:hover .page-link {
+    color: #fff;
+    background-color: #ff523b;
+}

@@ -16,7 +16,7 @@ function Home() {
     ];
 
     return (
-        <main className="Home">
+        <div className="Home">
             <Banner />
             <Category Images={Images} />
             <FeaturedProduct />
@@ -25,7 +25,7 @@ function Home() {
             <Testimonial />
             <Brand />
             <Footer />
-        </main>
+        </div>
     )
 }
 
