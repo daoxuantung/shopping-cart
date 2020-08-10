@@ -6,7 +6,6 @@ import LastedProduct from '../components/LastedProduct/LastedProduct';
 import Offer from '../components/Offer/Offer';
 import Testimonial from '../components/Testimonial/Testimonial';
 import Brand from '../components/Brand/Brand';
-import Footer from '../components/Footer/Footer';
 
 function Home() {
     const Images = [
@@ -24,7 +23,6 @@ function Home() {
             <Offer />
             <Testimonial />
             <Brand />
-            <Footer />
         </div>
     )
 }

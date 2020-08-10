@@ -1,22 +1,32 @@
 import React from 'react';
-import Footer from '../components/Footer/Footer';
 
-import ProductSection from '../components/ProductSection/ProductSection';
-import ProductTitle from '../components/ProductTitle/ProductTitle';
 import { ProductProvider } from '../contexts/Product';
-import PaginationProduct from '../components/Pagination/Pagination';
+import ListProducts from '../components/ListProducts/ListProducts'
+import ProductDetail from '../components/ProductDetail/ProductDetail';
 
-const Products = () => {
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+
+export default function Products() {
     return (
-        <div className="Products">
-            <ProductTitle />
-            <ProductProvider>
-                <ProductSection />
-            </ProductProvider>
-            <PaginationProduct />
-            <Footer />
-        </div>
+        <ProductProvider>
+            <div className="Products">
+                <Router>
+                    <Switch>
+                        <Route exact path="/shopping-cart/products/:name">
+                            <ProductDetail />
+                        </Route>
+                        <Route exact path="/shopping-cart/products">
+                            <ListProducts />
+                        </Route>
+                    </Switch>
+                </Router>
+            </div>
+        </ProductProvider >
     );
 };
 
-export default Products;
+

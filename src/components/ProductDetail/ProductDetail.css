@@ -1,0 +1,108 @@
+.ProductDetail {
+    margin-top: 5rem;
+}
+
+.ProductDetail-container {
+    padding: 0 4rem;
+}
+
+.ProductDetail-img img {
+    padding: 0;
+}
+
+.ProductDetail-content h4 {
+    margin: 1.5rem 0;
+    font-size: 1.375rem;
+    font-weight: bold;
+}
+
+.ProductDetail-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.ProductDetail-content .title-link {
+    margin-top: 1.5rem;
+}
+
+.ProductDetail-content .ProductDetail-form {
+    width: 8.5rem;
+}
+
+.ProductDetail-content .form-group .form-control {
+    border-radius: 0;
+    border: 1px solid #ff523b;
+}
+
+.ProductDetail-content .form-group .form-control:focus {
+    box-shadow: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form .form-control {
+    margin-right: 2rem;
+    width: 3.75rem;
+}
+
+.fa-indent {
+    color: #ff523b;
+    margin-left: 0.75rem;
+}
+
+.ProductDetail-content h3 {
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.slide-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.image {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.content-detail {
+    color: #8a8a8a;
+}
+
+.RelatedProducts {
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+.RelatedProducts .row .col-md-6 {
+    padding: 0;
+}
+
+.RelatedProducts .row .col-md-6:last-child {
+    text-align: end;
+    padding-top: 0.5rem;
+}
+
+.RelatedProducts .row .col-md-6:last-child a {
+    color: #8a8a8a;
+    text-decoration: none;
+}
+
+.RelatedProducts-title {
+    margin: 0 !important;
+    text-align: start;
+}
+
+.RelatedProducts-title::after {
+    width: 0;
+    height: 0;
+}
+
+.RelatedProducts .row:first-child {
+    margin-bottom: 4rem !important;
+}

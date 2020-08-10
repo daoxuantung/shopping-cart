@@ -1,5 +1,6 @@
 .PaginationProduct {
     margin-top: 4rem;
+    margin-bottom: 7.5rem;
 }
 
 .PaginationProduct nav {
@@ -23,4 +24,5 @@
 .page-item:hover .page-link {
     color: #fff;
     background-color: #ff523b;
+    border: 1px solid #ff523b;
 }

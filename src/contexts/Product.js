@@ -12,19 +12,15 @@ export class ProductProvider extends Component {
     }
 
     componentDidMount() {
-        const { products } = this.state;
-
-        if (!products.length) {
-            axios.get('http://localhost:3000/api/products?page=1&limit=20')
-                .then(res => {
-                    this.setState({
-                        products: res.data
-                    });
-                })
-                .catch(err => {
-                    console.log(err);
-                })
-        }
+        axios.get('http://localhost:9080/api/products?page=1&limit=20')
+            .then(res => {
+                this.setState({
+                    products: res.data
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
 

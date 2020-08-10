@@ -14,8 +14,9 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Footer from './components/Footer/Footer';
 
-function App() {
+export default function App() {
   return (
     <div className="App" >
       <Router>
@@ -34,16 +35,15 @@ function App() {
           <Route path="/shopping-cart/products">
             <Products />
           </Route>
-          <Route path="/shopping-cart">
+          <Route exact path="/shopping-cart">
             <Home />
           </Route>
         </Switch>
       </Router>
+      <Footer />
     </div>
   );
 }
-
-export default App;
 
 function Cart() {
   return (
@@ -56,5 +56,6 @@ function About() {
     <div ></div>
   )
 }
+
 
 
