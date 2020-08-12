@@ -19,9 +19,9 @@ const ListProducts = () => {
             <Container className="ProductSection">
                 <Row>
                     {
-                        products.map((product, index) =>
-                            <Col key={index} md="3">
-                                <Link className="link" to={`/shopping-cart/products/${product.name.toLowerCase().split(' ').join('-')}`}>
+                        products.map((product) =>
+                            <Col key={product._id} md="3">
+                                <Link className="link" to={`/shopping-cart/products/${product._id}`}>
                                     <Product product={product} />
                                 </Link>
                             </Col>
