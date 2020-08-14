@@ -10,6 +10,7 @@ import { Container, Row, Col } from 'reactstrap';
 import {
     Link
 } from "react-router-dom";
+import Footer from '../Footer/Footer';
 
 const ListProducts = () => {
     const { products } = useContext(ProductContext);
@@ -30,6 +31,7 @@ const ListProducts = () => {
                 </Row>
             </Container>
             <PaginationProduct />
+            <Footer />
         </div>
     );
 };

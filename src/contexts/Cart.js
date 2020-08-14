@@ -7,48 +7,33 @@ export class CartProvider extends Component {
         super();
         this.state = {
             cart: JSON.parse(localStorage.getItem('cart')) || [],
-            // countUpdate: this.countUpdate.bind(this),
             addToCart: this.addToCart.bind(this)
         }
     }
 
     addToCart(product) {
-        let items = JSON.parse(localStorage.getItem('cart')) || [];
+        let { cart } = this.state;
 
-        if (!items.length) {
-            items.push(product);
-            localStorage.setItem('cart', JSON.stringify(items));
+        if (!cart.length) {
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
             return;
         }
 
-        const indexOfItem = items.findIndex(item => item._id === product._id);
+        const indexOfItem = cart.findIndex(item => item._id === product._id);
 
         if (indexOfItem !== -1) {
-            items[indexOfItem].count += 1;
+            cart[indexOfItem].count += 1;
         } else {
-            items.push(product);
+            cart.push(product);
         }
 
-        localStorage.setItem('cart', JSON.stringify(items));
+        localStorage.setItem('cart', JSON.stringify(cart));
 
         this.setState({
-            cart: JSON.parse(localStorage.getItem('cart')),
+            cart: JSON.parse(localStorage.getItem('cart'))
         })
     }
-
-    // countUpdate() {
-    //     const { cart } = this.state;
-    //     let count = 0;
-
-    //     for (let item of cart) {
-    //         count += item.count;
-    //     }
-
-    //     this.setState({
-    //         count
-    //     })
-    // }
-
 
     render() {
         return (

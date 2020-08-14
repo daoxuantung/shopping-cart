@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
     Card, CardImg, CardBody,
     CardTitle
@@ -9,13 +10,15 @@ import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
 import './Product.css';
 
-const Product = () => {
+const Product = (props) => {
+    const { product } = props;
+
     return (
         <div className="Product">
             <Card>
-                <CardImg top width="100%" src="http://lorempixel.com/150/200/" alt="" />
+                <CardImg top width="100%" src={product.imageUrl} alt="" />
                 <CardBody>
-                    <CardTitle>Red Printed T-shirt</CardTitle>
+                    <CardTitle>{product.tittle}</CardTitle>
                     <div className="rating">
                         <FontAwesomeIcon icon={faStar} />
                         <FontAwesomeIcon icon={faStar} />
@@ -23,7 +26,7 @@ const Product = () => {
                         <FontAwesomeIcon icon={faStar} />
                         <FontAwesomeIcon icon={faStarHalfAlt} />
                     </div>
-                    <p>$50.00</p>
+                    <p>${product.price}</p>
                 </CardBody>
             </Card>
         </div>

@@ -17,10 +17,10 @@ const RelatedProduct = () => {
                 </Col>
             </Row>
             <Row className="w-100 m-0">
+                {/* <Col md="3"> <Product /></Col>
                 <Col md="3"> <Product /></Col>
                 <Col md="3"> <Product /></Col>
-                <Col md="3"> <Product /></Col>
-                <Col md="3"> <Product /></Col>
+                <Col md="3"> <Product /></Col> */}
             </Row>
         </Container>
     );

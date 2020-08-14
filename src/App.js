@@ -15,40 +15,41 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Footer from './components/Footer/Footer';
 import Cart from './pages/Cart';
+import { CartProvider } from './contexts/Cart';
 
 export default function App() {
   return (
     <ProductProvider>
-      <div className="App" >
-        <Router>
-          <Container className="p-0">
-            <Navbar logo={Logo} />
-          </Container>
-          <Switch>
-            <Route exact path="/shopping-cart">
-              <Home />
-            </Route>
-            <Route path="/shopping-cart/products">
-              <Products />
-            </Route>
-            <Route path="/shopping-cart/about">
-              <About />
-            </Route>
-            <Route path="/shopping-cart/contact">
-              <About />
-            </Route>
-            <Route path="/shopping-cart/account">
-              <About />
-            </Route>
-            <Route path="/shopping-cart/cart">
-              <Cart />
-            </Route>
-          </Switch>
-        </Router>
-        <Footer />
-      </div>
+      <CartProvider>
+        <div className="App" >
+          <Router>
+            <Container className="p-0">
+              <Navbar logo={Logo} />
+            </Container>
+            <Switch>
+              <Route exact path="/shopping-cart">
+                <Home />
+              </Route>
+              <Route path="/shopping-cart/products">
+                <Products />
+              </Route>
+              <Route path="/shopping-cart/about">
+                <About />
+              </Route>
+              <Route path="/shopping-cart/contact">
+                <About />
+              </Route>
+              <Route path="/shopping-cart/account">
+                <About />
+              </Route>
+              <Route path="/shopping-cart/cart">
+                <Cart />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
+      </CartProvider>
     </ProductProvider >
   );
 }

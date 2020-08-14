@@ -7,15 +7,20 @@ export class ProductProvider extends Component {
     constructor(props) {
         super();
         this.state = {
-            products: []
+            products: [],
+            latedProducts: []
         }
     }
 
     componentDidMount() {
         axios.get('http://localhost:9080/api/products?page=1&limit=20')
             .then(res => {
+                const products = res.data;
+                const latedProducts = products.slice(products.length - 8);
+
                 this.setState({
-                    products: res.data
+                    products,
+                    latedProducts
                 });
             })
             .catch(err => {
@@ -25,11 +30,11 @@ export class ProductProvider extends Component {
 
 
     render() {
-        const { products } = this.state;
+        const { products, latedProducts } = this.state;
         return (
             <ProductContext.Provider
                 value={{
-                    products
+                    products, latedProducts
                 }}
             >
                 {this.props.children}

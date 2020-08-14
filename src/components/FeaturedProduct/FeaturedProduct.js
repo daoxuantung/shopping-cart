@@ -9,10 +9,10 @@ const FeaturedProduct = () => {
         <Container className="FeaturedProduct">
             <h3 className="title">Featured Products</h3>
             <Row>
+                {/* <Col md="3"> <Product /></Col>
                 <Col md="3"> <Product /></Col>
                 <Col md="3"> <Product /></Col>
-                <Col md="3"> <Product /></Col>
-                <Col md="3"> <Product /></Col>
+                <Col md="3"> <Product /></Col> */}
             </Row>
         </Container>
     );

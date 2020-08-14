@@ -6,23 +6,19 @@ import LastedProduct from '../components/LastedProduct/LastedProduct';
 import Offer from '../components/Offer/Offer';
 import Testimonial from '../components/Testimonial/Testimonial';
 import Brand from '../components/Brand/Brand';
+import Footer from '../components/Footer/Footer';
 
 function Home() {
-    const Images = [
-        'http://lorempixel.com/250/300/',
-        'http://lorempixel.com/250/300/',
-        'http://lorempixel.com/250/300/'
-    ];
-
     return (
         <div className="Home">
             <Banner />
-            <Category Images={Images} />
+            <Category />
             <FeaturedProduct />
             <LastedProduct />
             <Offer />
             <Testimonial />
             <Brand />
+            <Footer />
         </div>
     )
 }
