@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import { ProductProvider } from './contexts/Product';
+import { CartProvider } from './contexts/Cart';
 
 import { Container } from 'reactstrap';
 
@@ -16,7 +17,6 @@ import {
   Route
 } from "react-router-dom";
 import Cart from './pages/Cart';
-import { CartProvider } from './contexts/Cart';
 
 export default function App() {
   return (

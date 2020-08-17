@@ -82,26 +82,6 @@
     right: -8px;
 }
 
-.cart-box {
-    width: 250px;
-    height: 150px;
-    margin: auto;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    background-color: #fff;
-    position: absolute;
-    right: 16px;
-    bottom: -160px;
-    cursor: initial !important;
-    display: flex;
-    align-items: center;
-}
-
-.cart-box p {
-    text-align: center;
-    vertical-align: middle;
-}
-
 @media screen and (max-width: 767px) {
     .Menubar-nav {
         display: none;

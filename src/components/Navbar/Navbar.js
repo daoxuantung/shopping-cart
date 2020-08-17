@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import classNames from 'classnames';
 
 import {
@@ -15,9 +15,16 @@ import {
 
 import CartLogo from '../../images/cart.png';
 import './Navbar.css';
+import { CartContext } from '../../contexts/Cart';
 
 const Menubar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
+    const { cart } = useContext(CartContext);
+
+    const count = cart.reduce((sum, item) => {
+        return sum += item.count
+    }, 0)
+
     const toggle = () => setIsOpen(!isOpen);
 
     return (
@@ -48,6 +55,7 @@ const Menubar = (props) => {
                 <Link className="Menubar-cart" to="/shopping-cart/cart">
                     <img src={CartLogo} width="100%" height="100%" alt="Cart" />
                 </Link>
+                <div className="cart-number">{count}</div>
             </div>
             <NavbarToggler onClick={toggle} className="mr-2" />
         </Navbar >

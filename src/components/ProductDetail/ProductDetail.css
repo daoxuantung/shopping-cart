@@ -22,7 +22,7 @@
 }
 
 .ProductDetail-content .ProductDetail-form {
-    width: 8.5rem;
+    width: 7.5rem;
 }
 
 .ProductDetail-content .form-group .form-control {
@@ -32,17 +32,6 @@
 
 .ProductDetail-content .form-group .form-control:focus {
     box-shadow: none;
-}
-
-.form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.form .form-control {
-    margin-right: 2rem;
-    width: 3.75rem;
 }
 
 .fa-indent {
@@ -68,6 +57,15 @@
 
 .content-detail {
     color: #8a8a8a;
+}
+
+.ProductDetail-form {
+    display: flex;
+    align-items: center;
+}
+
+.ProductDetail-form label {
+    margin-right: 1rem;
 }
 
 @media screen and (max-width: 576px) {

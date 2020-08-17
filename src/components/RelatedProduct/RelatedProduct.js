@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from '../Product/Product';
+// import Product from '../Product/Product';
 
 import { Container, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';

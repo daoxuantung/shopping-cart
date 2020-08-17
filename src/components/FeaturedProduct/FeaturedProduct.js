@@ -1,6 +1,6 @@
 import React from 'react';
-import Product from '../Product/Product';
-import { Container, Row, Col } from 'reactstrap';
+// import Product from '../Product/Product';
+import { Container, Row } from 'reactstrap';
 
 import './FeaturedProduct.css';
 
