@@ -1,11 +1,12 @@
 import React from 'react';
-// import Product from '../Product/Product';
+import Product from '../Product/Product';
 
 import { Container, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './RelatedProduct.css';
 
-const RelatedProduct = () => {
+const RelatedProduct = props => {
+    const { relatedProducts } = props;
     return (
         <Container className="RelatedProducts p-0">
             <Row className="w-100 m-0">
@@ -17,10 +18,14 @@ const RelatedProduct = () => {
                 </Col>
             </Row>
             <Row className="w-100 m-0">
-                {/* <Col md="3"> <Product /></Col>
-                <Col md="3"> <Product /></Col>
-                <Col md="3"> <Product /></Col>
-                <Col md="3"> <Product /></Col> */}
+                {
+                    relatedProducts.map(product =>
+                        <Col md="3" key={product._id}>
+                            <Link className="link" to={`/shopping-cart/products/${product._id}`}>
+                                <Product product={product} />
+                            </Link>
+                        </Col>)
+                }
             </Row>
         </Container>
     );
