@@ -77,8 +77,18 @@
     color: #ff523b;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
     .ProductDetail-content h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    ProductDetail-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ProductDetail-img {
+        height: 100%;
     }
 }

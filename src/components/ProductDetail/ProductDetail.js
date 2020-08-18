@@ -35,12 +35,12 @@ export default function ProductDetail() {
                     product &&
                     <Row className="justify-content-between">
                         <Col md="6" className="ProductDetail-img">
-                            <img src={slide || product.galleyUrl[0]} alt="" width="100%" height="500px" />
+                            <img src={slide || product.galleyUrl[0]} alt="" width="100%" />
                             <div className="slide-images">
                                 {
                                     product.galleyUrl.map((image, index) =>
                                         <div className="image" key={index} onClick={(e) => slideShow(e)} >
-                                            <img src={image} alt="" height="120px" />
+                                            <img src={image} alt="" />
                                         </div>)
                                 }
                             </div>
