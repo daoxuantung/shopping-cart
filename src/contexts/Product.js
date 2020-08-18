@@ -14,7 +14,7 @@ export class ProductProvider extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:9080/api/products?page=1&limit=20')
+        axios.get('https://red-store-server.herokuapp.com/api/products?page=1&limit=20')
             .then(res => {
                 const products = res.data;
                 const latedProducts = products.slice(products.length - 8);
