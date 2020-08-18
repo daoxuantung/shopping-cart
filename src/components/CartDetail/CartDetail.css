@@ -27,13 +27,17 @@ th:nth-child(3) {
 }
 
 .cart-info p,
+.cart-info a {
+    text-align: start;
+}
+
+.cart-info p,
 .cart-info small {
     margin-bottom: 0.5rem;
 }
 
 .cart-info small {
     display: block;
-    margin-left: 1rem;
 }
 
 td input {
