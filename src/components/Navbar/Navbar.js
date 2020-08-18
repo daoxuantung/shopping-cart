@@ -38,16 +38,16 @@ const Menubar = (props) => {
                         <NavLink className="nav-link" to="/shopping-cart">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink activeClassName='is-active' className="nav-link" to="/shopping-cart/products">Products</NavLink>
+                        <NavLink className="nav-link" to="/shopping-cart/products">Products</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink activeClassName='is-active' className="nav-link" to="/shopping-cart/about">About</NavLink>
+                        <NavLink className="nav-link" to="#">About</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink activeClassName='is-active' className="nav-link" to="/shopping-cart/contact">Contact</NavLink>
+                        <NavLink className="nav-link" to="#">Contact</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink activeClassName='is-active' className="nav-link" to="/shopping-cart/account">Account</NavLink>
+                        <NavLink className="nav-link" to="/shopping-cart/account">Account</NavLink>
                     </NavItem>
                 </Nav>
             </div>

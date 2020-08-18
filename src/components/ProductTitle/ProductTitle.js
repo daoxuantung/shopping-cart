@@ -14,7 +14,7 @@ const ProductContent = () => {
                     <FormGroup>
                         <Input type="select" name="select" id="exampleSelect">
                             <option>Default</option>
-                            <option>Short by price</option>
+                            <option>Sort by price</option>
                             <option>Sort by rating</option>
                             <option>Sort by popularity</option>
                         </Input>

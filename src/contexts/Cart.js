@@ -12,22 +12,14 @@ export const CartProvider = (props) => {
     const addToCart = (target, id) => {
         const value = target.parentElement.parentElement.children[3].children[1].value;
 
-        const index = cart.findIndex(item => item._id === id);
+        const check = cart.every(item => item._id !== id);
 
         const data = products.find(product => product._id === id);
 
-        if (index !== -1) {
-            cart.filter((item, index) => {
-                if (item.sized === value && item._id === id) {
-                    cart[index].count += 1;
-                    setCart([...cart]);
-                } else {
-                    setCart([...cart, { ...data, sized: value }]);
-                }
-                return item;
-            });
-        } else {
+        if (check) {
             setCart([...cart, { ...data, count: 1, sized: value }]);
+        } else {
+            alert("The product has been added to cart");
         }
     }
 

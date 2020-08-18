@@ -17,6 +17,7 @@ import {
   Route
 } from "react-router-dom";
 import Cart from './pages/Cart';
+import Account from './pages/Account';
 
 export default function App() {
   return (
@@ -34,14 +35,8 @@ export default function App() {
               <Route path="/shopping-cart/products">
                 <Products />
               </Route>
-              <Route path="/shopping-cart/about">
-                <About />
-              </Route>
-              <Route path="/shopping-cart/contact">
-                <About />
-              </Route>
               <Route path="/shopping-cart/account">
-                <About />
+                <Account />
               </Route>
               <Route path="/shopping-cart/cart">
                 <Cart />
@@ -53,12 +48,5 @@ export default function App() {
     </ProductProvider >
   );
 }
-
-function About() {
-  return (
-    <div >About</div>
-  )
-}
-
 
 

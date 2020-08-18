@@ -8,7 +8,8 @@ export class ProductProvider extends Component {
         super();
         this.state = {
             products: [],
-            latedProducts: []
+            latedProducts: [],
+            featuredProducts: []
         }
     }
 
@@ -17,10 +18,13 @@ export class ProductProvider extends Component {
             .then(res => {
                 const products = res.data;
                 const latedProducts = products.slice(products.length - 8);
+                const sortProducts = products.sort((product1, product2) => product1.view - product2.view)
+                const featuredProducts = sortProducts.slice(products.length - 4);
 
                 this.setState({
                     products,
-                    latedProducts
+                    latedProducts,
+                    featuredProducts
                 });
             })
             .catch(err => {
@@ -30,11 +34,11 @@ export class ProductProvider extends Component {
 
 
     render() {
-        const { products, latedProducts } = this.state;
+        const { products, latedProducts, featuredProducts } = this.state;
         return (
             <ProductContext.Provider
                 value={{
-                    products, latedProducts
+                    products, latedProducts, featuredProducts
                 }}
             >
                 {this.props.children}

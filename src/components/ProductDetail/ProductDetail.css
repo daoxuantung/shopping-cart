@@ -68,6 +68,15 @@
     margin-right: 1rem;
 }
 
+.title-link a {
+    color: #000;
+    text-decoration: none;
+}
+
+.title-link a:hover {
+    color: #ff523b;
+}
+
 @media screen and (max-width: 576px) {
     .ProductDetail-content h2 {
         font-size: 2rem;

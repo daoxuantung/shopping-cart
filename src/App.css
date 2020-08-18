@@ -32,3 +32,108 @@
   color: #000;
   text-decoration: none;
 }
+
+.Account {
+  padding: 6rem 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 214, 214, 1) 50%);
+}
+
+.Account-form {
+  width: 18.75rem;
+  height: 25rem;
+  background: #fff;
+  position: relative;
+  text-align: center;
+  padding: 1.25rem 0;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form-btn {
+  display: inline-block;
+}
+
+.form-btn span {
+  font-weight: bold;
+  padding: 0 10px;
+  color: #555;
+  cursor: pointer;
+  width: 100px;
+  display: inline-block;
+}
+
+.Account-form form {
+  padding: 0 20px;
+  position: absolute;
+  top: 130px;
+}
+
+.Account-form form input {
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+}
+
+.Account-form form .btn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 20px;
+  background: #ff523b;
+  transition: 0.3s;
+}
+
+.Account-form form .btn:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.Account-form form .btn:hover {
+  background: #ff2e2e;
+}
+
+.Account-form form .btn:active {
+  background: #ff6e6e !important;
+}
+
+.Account-form form a {
+  font-size: 12px;
+  color: #555;
+  text-decoration: none;
+}
+
+.form-login {
+  display: none;
+}
+
+.border-bottom {
+  width: 50%;
+  border: none;
+  background: #ff523b;
+  height: 3px;
+  margin-top: 8px;
+  transform: translateX(100px);
+  transition: 0.2s ease;
+}
+
+.transform {
+  transform: translateX(0);
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .Account-form {
+    width: 100%;
+  }
+}

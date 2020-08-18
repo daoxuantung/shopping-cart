@@ -33,7 +33,7 @@ th:nth-child(3) {
 
 .cart-info small {
     display: block;
-    margin-left: 0.75rem;
+    margin-left: 1rem;
 }
 
 td input {
@@ -112,6 +112,20 @@ tr td:last-child {
 
 .cart-check {
     text-align: end;
+}
+
+.box-content {
+    height: 25rem;
+    border: 1px solid #ff523b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-content .btn a {
+    color: #fff;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 576px) {

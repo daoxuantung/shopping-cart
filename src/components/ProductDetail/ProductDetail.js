@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { ProductContext } from '../../contexts/Product';
 import {
-    useParams
+    useParams, Link
 } from "react-router-dom";
 import { Container, Row, Col, FormGroup, Input, Button, Label } from 'reactstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,18 +35,24 @@ export default function ProductDetail() {
                     product &&
                     <Row className="justify-content-between">
                         <Col md="6" className="ProductDetail-img">
-                            <img src={slide || product.galleyUrl[0]} alt="" width="100%" />
+                            <img src={slide || product.galleyUrl[0]} alt="" width="100%" height="500px" />
                             <div className="slide-images">
                                 {
                                     product.galleyUrl.map((image, index) =>
                                         <div className="image" key={index} onClick={(e) => slideShow(e)} >
-                                            <img src={image} alt="" />
+                                            <img src={image} alt="" height="120px" />
                                         </div>)
                                 }
                             </div>
                         </Col>
                         <Col md="6" className="ProductDetail-content">
-                            <p className="title-link">Home / {product.title}</p>
+                            <p className="title-link">
+                                <Link to="/shopping-cart">Home </Link>
+                                /
+                                <Link to="/shopping-cart/products"> Products </Link>
+                                /
+                                <Link to={`/shopping-cart/products/${product._id}`}> {product.title} </Link>
+                            </p>
                             <h2>{product.description}</h2>
                             <h4>${product.price}</h4>
                             <FormGroup className="ProductDetail-form">
