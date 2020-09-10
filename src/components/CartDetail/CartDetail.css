@@ -27,7 +27,7 @@ th:nth-child(3) {
 }
 
 .cart-info p,
-.cart-info a {
+.cart-info button {
     text-align: start;
 }
 
@@ -52,15 +52,14 @@ td input:focus {
     border: 1px solid #ced4da !important;
 }
 
-td a {
+td button {
     display: block;
     color: #ff523b;
     font-size: 12px;
-}
-
-td a:hover {
-    color: #ff523b;
-    text-decoration: none;
+    border: none;
+    background: none;
+    transition: 0.5s;
+    outline: none !important;
 }
 
 td img {
@@ -128,8 +127,29 @@ tr td:last-child {
 }
 
 .box-content .btn a {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
+    padding: 0 !important;
+}
+
+.Cart-form {
+    margin: 0 auto;
+    width: 4rem;
+}
+
+.Cart-form .form-control {
+    cursor: pointer;
+}
+
+.Cart-form .form-control:focus {
+    box-shadow: none !important;
+    border: 1px solid #ced4da;
+}
+
+@media screen and (max-width: 768px) {
+    .cart-text {
+        margin-left: 0.75rem;
+    }
 }
 
 @media screen and (max-width: 576px) {

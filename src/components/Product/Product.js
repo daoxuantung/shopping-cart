@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import {
     Card, CardImg, CardBody,
@@ -20,11 +20,44 @@ const Product = (props) => {
                 <CardBody>
                     <CardTitle>{product.tittle}</CardTitle>
                     <div className="rating">
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStarHalfAlt} />
+                        {
+                            product.rating === 5 ?
+                                <Fragment>
+                                    <FontAwesomeIcon icon={faStar} />
+                                    <FontAwesomeIcon icon={faStar} />
+                                    <FontAwesomeIcon icon={faStar} />
+                                    <FontAwesomeIcon icon={faStar} />
+                                    <FontAwesomeIcon icon={faStar} />
+                                </Fragment>
+                                : product.rating > 4 && product.rating < 5 ?
+                                    <Fragment>
+                                        <FontAwesomeIcon icon={faStar} />
+                                        <FontAwesomeIcon icon={faStar} />
+                                        <FontAwesomeIcon icon={faStar} />
+                                        <FontAwesomeIcon icon={faStar} />
+                                        <FontAwesomeIcon icon={faStarHalfAlt} />
+                                    </Fragment>
+                                    : product.rating === 4 ?
+                                        <Fragment>
+                                            <FontAwesomeIcon icon={faStar} />
+                                            <FontAwesomeIcon icon={faStar} />
+                                            <FontAwesomeIcon icon={faStar} />
+                                            <FontAwesomeIcon icon={faStar} />
+                                        </Fragment>
+                                        : product.rating > 3 ?
+                                            <Fragment>
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStarHalfAlt} />
+                                            </Fragment>
+                                            : <Fragment>
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                            </Fragment>
+
+                        }
                     </div>
                     <p>${product.price}</p>
                 </CardBody>

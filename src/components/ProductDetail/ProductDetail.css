@@ -71,6 +71,7 @@
 .title-link a {
     color: #000;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 .title-link a:hover {

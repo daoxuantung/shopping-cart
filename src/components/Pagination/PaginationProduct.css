@@ -3,26 +3,21 @@
     margin-bottom: 7.5rem;
 }
 
-.PaginationProduct nav {
-    margin: 0 auto;
+.PaginationProduct button {
+    margin-right: 0.5rem;
 }
 
-.PaginationProduct nav ul {
-    justify-content: center;
+.PaginationProduct button,
+.PaginationProduct button:hover,
+.PaginationProduct button:focus,
+.PaginationProduct button:active {
+    background: #fff !important;
+    color: #ff523b !important;
+    border: 1px solid #ff523b !important;
+    box-shadow: none !important;
 }
 
-.page-link {
-    color: #000;
-    border: 1px solid #ff523b;
-    width: 3.75rem;
-}
-
-.page-link:focus {
-    box-shadow: none;
-}
-
-.page-item:hover .page-link {
-    color: #fff;
-    background-color: #ff523b;
-    border: 1px solid #ff523b;
+.PaginationProduct button:hover {
+    background: #ff523b !important;
+    color: #fff !important;
 }

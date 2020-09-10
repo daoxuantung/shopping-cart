@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 
 const LastedProduct = () => {
     const { latedProducts } = useContext(ProductContext);
-
     return (
         <Container className="FeaturedProduct">
             <h3 className="title">Lasted Products</h3>

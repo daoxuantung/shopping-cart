@@ -52,11 +52,11 @@ export default function ProductDetail() {
                             </Col>
                             <Col md="6" className="ProductDetail-content">
                                 <p className="title-link">
-                                    <Link to="/shopping-cart">Home </Link>
+                                    <Link to="/shopping-cart">Home&nbsp;</Link>
                                 /
-                                <Link to="/shopping-cart/products"> Products </Link>
+                                <Link to="/shopping-cart/products">&nbsp;Products&nbsp;</Link>
                                 /
-                                <Link to={`/shopping-cart/products/${product._id}`}> {product.title} </Link>
+                                &nbsp;{product.title}
                                 </p>
                                 <h2>{product.description}</h2>
                                 <h4>${product.price}</h4>
@@ -84,7 +84,7 @@ export default function ProductDetail() {
                         </Row>
                     }
                 </Container>
-                <RelatedProduct relatedProducts={relatedProducts} />
+                <RelatedProduct relatedProducts={relatedProducts} product={product} />
             </Container >
             <Footer />
         </Fragment>

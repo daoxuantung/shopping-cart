@@ -11,6 +11,7 @@
     width: 100%;
 }
 
+
 @media screen and (max-width: 576px) {
     .Category .row {
         margin: 0;

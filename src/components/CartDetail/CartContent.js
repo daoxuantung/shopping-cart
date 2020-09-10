@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import { Table, Input, Form, Button } from 'reactstrap';
+import { Table, Input, Form, Button, FormGroup } from 'reactstrap';
 import './CartDetail.css';
 
 const CartDetail = props => {
-    const { cart, price, total } = props;
+    const { cart, price, total, removeItem, changeAmount } = props;
 
     return (
         <Fragment>
@@ -18,24 +18,36 @@ const CartDetail = props => {
                 </thead>
                 <tbody>
                     {
-                        cart.map(item =>
-                            <tr>
+                        cart.map((item, index) =>
+                            <tr key={index}>
                                 <td>
                                     <div className="cart-info">
                                         <img src={item.imageUrl} alt="dsa" />
-                                        <div>
+                                        <div className="cart-text">
                                             <p>T-shirt</p>
                                             <small>Price: ${item.price}</small>
-                                            <a href="/">Remove</a>
+                                            <button onClick={() => removeItem(index)}>
+                                                Remove
+                                            </button>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    {item.sized}
+                                    <FormGroup className="Cart-form">
+                                        <Input
+                                            type="select"
+                                            name="select"
+                                            id="size">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                            <option>XL</option>
+                                        </Input>
+                                    </FormGroup>
                                 </td>
 
                                 <td>
-                                    <Input type="number" value={item.count}></Input>
+                                    <Input type="number" value={item.count} min="1" max="99" onChange={(e) => changeAmount(e.target.value, item)}></Input>
                                 </td>
                                 <td>${item.price * item.count}</td>
                             </tr>)
@@ -65,7 +77,7 @@ const CartDetail = props => {
                     Proceed to checkout &#8594;
                 </Button>
             </Form>
-        </Fragment>
+        </Fragment >
     );
 };
 

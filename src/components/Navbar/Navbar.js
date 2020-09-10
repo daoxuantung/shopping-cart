@@ -19,11 +19,7 @@ import { CartContext } from '../../contexts/Cart';
 
 const Menubar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
-    const { cart } = useContext(CartContext);
-
-    const count = cart.reduce((sum, item) => {
-        return sum += item.count
-    }, 0)
+    const { count } = useContext(CartContext);
 
     const toggle = () => setIsOpen(!isOpen);
 
@@ -39,12 +35,6 @@ const Menubar = (props) => {
                     </NavItem>
                     <NavItem>
                         <NavLink className="nav-link" to="/shopping-cart/products">Products</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="nav-link" to="#">About</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="nav-link" to="#">Contact</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className="nav-link" to="/shopping-cart/account">Account</NavLink>

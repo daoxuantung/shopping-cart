@@ -1,5 +1,5 @@
-import React from 'react';
-import ListProducts from '../components/ListProducts/ListProducts'
+import React, { useEffect } from 'react';
+import Product from '../components/Products/Products'
 import ProductDetail from '../components/ProductDetail/ProductDetail';
 
 import {
@@ -7,10 +7,13 @@ import {
 } from "react-router-dom";
 
 export default function Products() {
+    useEffect(() => {
+        document.title = "Red Store | Products";
+    }, [])
     return (
         <div className="Products">
             <Route exact path="/shopping-cart/products">
-                <ListProducts />
+                <Product />
             </Route>
             <Route path="/shopping-cart/products/:id">
                 <ProductDetail />

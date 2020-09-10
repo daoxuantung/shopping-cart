@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Container, Row, Col, NavLink } from 'reactstrap';
 
 import Image1 from '../../images/category-1.jpg';
 import Image2 from '../../images/category-2.jpg';
@@ -12,15 +11,18 @@ const Category = props => {
     const images = [
         {
             src: Image1,
-            category: "trousers"
+            category: "shirt",
+            title: "Shirt"
         },
         {
             src: Image2,
-            category: "shoes"
+            category: "dress",
+            title: "Dress"
         },
         {
             src: Image3,
-            category: "thirts"
+            category: "sweater",
+            title: "Sweater"
         }]
     return (
         <Container className="Category p-0">
@@ -28,9 +30,9 @@ const Category = props => {
                 {
                     images.map((image, index) =>
                         <Col md="4" key={index}>
-                            <Link to={`/shopping-cart/products?category=${image.category}`}>
+                            <NavLink href={`/shopping-cart/products?category=${image.category}`} title={image.title}>
                                 <img src={image.src} alt="" />
-                            </Link>
+                            </NavLink>
                         </Col>
                     )
                 }

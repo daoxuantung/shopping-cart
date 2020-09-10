@@ -1,21 +1,20 @@
 import React, { useContext } from 'react';
-import { Container, Button } from 'reactstrap';
+import { Container, Button, NavLink } from 'reactstrap';
 import { CartContext } from '../../contexts/Cart';
 import CartContent from './CartContent';
 import './CartDetail.css';
-import { Link } from 'react-router-dom';
 
 const CartDetail = () => {
-    const { cart, price, total } = useContext(CartContext);
+    const { cart, price, total, removeItem, changeAmount } = useContext(CartContext);
 
     return (
         <Container className="CartDetail">
             {
-                cart.length ? <CartContent cart={cart} price={price} total={total} /> :
-                    <Container className="box-content">
+                cart.length ? <CartContent changeAmount={changeAmount} cart={cart} price={price} total={total} removeItem={removeItem} />
+                    : <Container className="box-content">
                         Nothing products here.
                         <Button className="check-out">
-                            <Link to="/shopping-cart">Go to shop &#8594;</Link>
+                            <NavLink href="/shopping-cart">Go to shop &#8594;</NavLink>
                         </Button>
                     </Container>
             }

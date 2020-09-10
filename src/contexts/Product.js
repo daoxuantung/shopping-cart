@@ -1,48 +1,44 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+
+import API from './../axios/api';
 
 export const ProductContext = React.createContext();
 
-export class ProductProvider extends Component {
-    constructor(props) {
-        super();
-        this.state = {
-            products: [],
-            latedProducts: [],
-            featuredProducts: []
+export const ProductProvider = props => {
+    const [products, setProducts] = useState([]);
+    const [latedProducts, setLatedProducts] = useState([]);
+    const [featuredProducts, setFeaturedProducts] = useState([]);
+
+    useEffect(() => {
+        async function fetchData1() {
+            const products = (await API.get(`products`)).data;
+
+            setProducts(products);
         }
-    }
+        fetchData1();
+    }, [])
 
-    componentDidMount() {
-        axios.get('https://red-store-server.herokuapp.com/api/products?page=1&limit=20')
-            .then(res => {
-                const products = res.data;
-                const latedProducts = products.slice(products.length - 8);
-                const sortProducts = products.sort((product1, product2) => product1.view - product2.view)
-                const featuredProducts = sortProducts.slice(products.length - 4);
+    useEffect(() => {
+        async function fetchData2() {
+            const latedProducts = (await API.get(`lastedProducts`)).data;
+            setLatedProducts(latedProducts);
+        }
+        fetchData2();
+    }, [])
 
-                this.setState({
-                    products,
-                    latedProducts,
-                    featuredProducts
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }
+    useEffect(() => {
+        async function fetchData3() {
+            const featuredProducts = (await API.get(`featuredProducts`)).data;
+            setFeaturedProducts(featuredProducts);
+        }
+        fetchData3();
+    }, []);
 
-
-    render() {
-        const { products, latedProducts, featuredProducts } = this.state;
-        return (
-            <ProductContext.Provider
-                value={{
-                    products, latedProducts, featuredProducts
-                }}
-            >
-                {this.props.children}
-            </ProductContext.Provider>
-        );
-    }
+    return (
+        <ProductContext.Provider
+            value={{ products, latedProducts, featuredProducts }}
+        >
+            {props.children}
+        </ProductContext.Provider >
+    );
 }

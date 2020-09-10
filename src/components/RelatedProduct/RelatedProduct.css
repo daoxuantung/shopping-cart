@@ -9,17 +9,24 @@
 
 .RelatedProducts .row .col-md-6:last-child {
     text-align: end;
-    padding-top: 0.5rem;
 }
 
 .RelatedProducts .row .col-md-6:last-child a {
-    color: #8a8a8a;
-    text-decoration: none;
+    color: #8a8a8a !important;
+    text-decoration: none !important;
 }
 
 .RelatedProducts .row .col-md-6:last-child a:hover {
-    color: #8a8a8a;
-    text-decoration: underline;
+    color: #8a8a8a !important;
+    text-decoration: underline !important;
+}
+
+.RelatedProducts-link {
+    padding: 0 !important;
+}
+
+.RelatedProducts-link:hover {
+    color: #000 !important;
 }
 
 .RelatedProducts-title {
