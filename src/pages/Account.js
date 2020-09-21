@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import classNames from 'classnames';
 import { Container, Col, Row, Button } from 'reactstrap';
 import Footer from './../components/Footer/Footer';
@@ -8,13 +8,21 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 const Account = () => {
     const [position, setPosition] = useState(false);
+    const [text, setText] = useState('Login');
 
     const handleFormLogin = () => {
-        setPosition(true);
+        setPosition(false);
+        setText('Login');
     }
     const handleFormRegister = () => {
-        setPosition(false);
+        setPosition(true);
+        setText('Register');
     }
+
+    useEffect(() => {
+        document.title = text;
+    }, [text])
+
     return (
         <Fragment>
             <div className="Account">
@@ -31,14 +39,14 @@ const Account = () => {
                                     <hr className={classNames('border-bottom', { transform: position })}></hr>
                                 </div>
 
-                                <form className={classNames('form-login', { show: position })}>
+                                <form className={classNames('form-login', { hidden: position })}>
                                     <input type="text" placeholder="Username" />
                                     <input type="password" placeholder="Password" />
                                     <Button type="submit">Login</Button>
                                     <Link to="/shopping-cart/account">Forgot password?</Link>
                                 </form>
 
-                                <form className={classNames('form-register', { hidden: position })}>
+                                <form className={classNames('form-register', { show: position })}>
                                     <input type="text" placeholder="Username" />
                                     <input type="text" placeholder="Email" />
                                     <input type="password" placeholder="Password" />

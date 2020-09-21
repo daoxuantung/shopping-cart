@@ -106,7 +106,7 @@
   text-decoration: none;
 }
 
-.form-login {
+.form-register {
   display: none;
 }
 
@@ -116,12 +116,11 @@
   background: #ff523b;
   height: 3px;
   margin-top: 8px;
-  transform: translateX(100px);
   transition: 0.2s ease;
 }
 
 .transform {
-  transform: translateX(0);
+  transform: translateX(100px);
 }
 
 .show {
@@ -135,5 +134,8 @@
 @media screen and (max-width: 576px) {
   .Account-form {
     width: 100%;
+  }
+  .title {
+    font-size: 1.75rem;
   }
 }

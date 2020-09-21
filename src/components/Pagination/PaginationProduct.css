@@ -1,23 +1,25 @@
-.PaginationProduct {
-    margin-top: 4rem;
-    margin-bottom: 7.5rem;
+.Pagination {
+    margin-bottom: 5rem;
 }
 
-.PaginationProduct button {
-    margin-right: 0.5rem;
+.pagination {
+    justify-content: center;
 }
 
-.PaginationProduct button,
-.PaginationProduct button:hover,
-.PaginationProduct button:focus,
-.PaginationProduct button:active {
-    background: #fff !important;
-    color: #ff523b !important;
-    border: 1px solid #ff523b !important;
-    box-shadow: none !important;
-}
-
-.PaginationProduct button:hover {
+.pagination .active {
     background: #ff523b !important;
-    color: #fff !important;
+}
+
+.page-link {
+    color: #000;
+    background: inherit !important;
+    border: 1px solid #ff523b !important;
+}
+
+.page-link:hover {
+    color: #000;
+}
+
+.page-link:focus {
+    box-shadow: none !important;
 }

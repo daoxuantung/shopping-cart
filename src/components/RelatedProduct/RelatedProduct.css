@@ -14,6 +14,7 @@
 .RelatedProducts .row .col-md-6:last-child a {
     color: #8a8a8a !important;
     text-decoration: none !important;
+    padding-right: 0 !important;
 }
 
 .RelatedProducts .row .col-md-6:last-child a:hover {
@@ -41,4 +42,28 @@
 
 .RelatedProducts .row:first-child {
     margin-bottom: 4rem !important;
+}
+
+@media screen and (max-width: 576px) {
+    .RelatedProducts .row:first-child {
+        margin-bottom: 0 !important;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .RelatedProducts .row:first-child .col-md-6:first-child {
+        margin-bottom: 3rem;
+    }
+    .RelatedProducts .row:first-child .col-md-6:last-child {
+        margin-bottom: 1rem;
+    }
+
+    .RelatedProducts .row:last-child .col-md-3 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .RelatedProducts .row:last-child .col-md-3 a {
+        color: #000 !important;
+        text-align: start !important;
+    }
 }

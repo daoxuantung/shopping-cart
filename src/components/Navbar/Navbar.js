@@ -6,11 +6,11 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem
+    NavItem, NavLink
 } from 'reactstrap';
 
 import {
-    NavLink, Link
+    Link
 } from "react-router-dom";
 
 import CartLogo from '../../images/cart.png';
@@ -30,14 +30,14 @@ const Menubar = (props) => {
             </NavbarBrand>
             <div className={classNames('ml-auto', 'Menubar-nav', { 'nav-show': isOpen })} navbar="true">
                 <Nav navbar>
-                    <NavItem>
-                        <NavLink className="nav-link" to="/shopping-cart">Home</NavLink>
+                    <NavItem onClick={toggle}>
+                        <Link className='nav-link' to="/shopping-cart">Home</Link>
+                    </NavItem >
+                    <NavItem onClick={toggle}>
+                        <NavLink className='nav-link' href="/shopping-cart/products">Products</NavLink>
                     </NavItem>
-                    <NavItem>
-                        <NavLink className="nav-link" to="/shopping-cart/products">Products</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="nav-link" to="/shopping-cart/account">Account</NavLink>
+                    <NavItem onClick={toggle}>
+                        <Link className='nav-link' to="/shopping-cart/account">Account</Link>
                     </NavItem>
                 </Nav>
             </div>

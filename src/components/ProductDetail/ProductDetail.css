@@ -2,7 +2,12 @@
     margin-top: 5rem;
 }
 
-.ProductDetail-img img {
+.product-image {
+    height: 600px;
+    width: 100%;
+}
+
+.ProductDetail-img > img {
     padding: 0;
 }
 
@@ -50,6 +55,10 @@
     margin-top: 0.5rem;
 }
 
+.slide-images > img {
+    height: 140px;
+}
+
 .image {
     flex-basis: 24%;
     cursor: pointer;
@@ -83,13 +92,23 @@
         font-size: 1.75rem;
     }
 
-    ProductDetail-content h3 {
+    .ProductDetail-content h3 {
         font-size: 1.5rem;
+    }
+
+    .product-image {
+        height: 400px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .ProductDetail-img {
         height: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .ProductDetail .ProductDetail-container {
+        padding: 0 2rem;
     }
 }

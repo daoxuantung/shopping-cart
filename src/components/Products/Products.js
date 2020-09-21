@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { ProductContext } from '../../contexts/Product'
 
 import PaginationProduct from '../Pagination/Pagination';
@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 import { Container, FormGroup, Input, Row, Col, NavItem, Nav } from 'reactstrap';
 
 import {
-    NavLink, useLocation
+    Link, useLocation
 } from "react-router-dom";
 
 import './Products.css';
@@ -18,71 +18,58 @@ const useQuery = () => {
 }
 
 const Products = () => {
-    const { products } = useContext(ProductContext);
-    const [productsFilter, setProducts] = useState([]);
-
-    useEffect(() => {
-        setProducts([...products]);
-    }, [products])
-
-
-    const productsFiltered = (e) => {
-        const value = e.target.value;
-        switch (value) {
-            case 'Sort by price':
-                setProducts([...products].sort((product1, product2) => product1.price - product2.price));
-                break;
-            case 'Sort by rating':
-                setProducts([...products].sort((product1, product2) => product1.rating - product2.rating));
-                break;
-            case 'Sort by popularity':
-                setProducts([...products].sort((product1, product2) => product1.view - product2.view));
-                break;
-            default:
-                setProducts([...products]);
-                break;
-        }
-    }
-
+    const { products, productsSorted, productsFiltered } = useContext(ProductContext);
+    const categories = ['', 'shirt', 'dress', 'sweater'];
     let query = useQuery();
-
     return (
         <div className="Products">
             <Container className="ProductContent">
-                <h3 className="title ProductContent-title">All Products</h3>
+                {
+                    query.get("category") ?
+                        <h3 className="title ProductContent-title">{query.get("category").slice(0, 1).toUpperCase() + query.get("category").slice(1)}</h3>
+                        : <h3 className="title ProductContent-title">All Products</h3>
+                }
                 <Row className="w-100 m-0 flex-row justify-content-between">
                     <Col md="6">
                         <Nav navbar>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/shopping-cart/products">All</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/shopping-cart/products?category=shirt">Shirt</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/shopping-cart/products?category=dress">Dress</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/shopping-cart/products?category=sweater">Sweater</NavLink>
-                            </NavItem>
+                            {
+                                categories.map((category, index) => {
+                                    if (category.length) {
+                                        const string = category.slice(0, 1).toUpperCase() + category.slice(1);
+                                        return (
+                                            <NavItem key={index} active={query.get("category") === category} onClick={(e) => productsFiltered(e, category)}>
+                                                <Link className="nav-link" to={`/shopping-cart/products?category=${category}`}>{string}</Link>
+                                            </NavItem>
+
+                                        )
+                                    } else {
+                                        return (
+                                            <NavItem key={index} onClick={(e) => productsFiltered(e, category)} active={!query.get("category")}>
+                                                <Link className="nav-link" to={`/shopping-cart/products`}>All</Link>
+                                            </NavItem>
+                                        )
+                                    }
+
+                                })
+                            }
                         </Nav>
                     </Col>
                     <Col md="6">
                         <FormGroup>
-                            <Input type="select" name="select" onChange={(e) => productsFiltered(e)}>
-                                <option>Default</option>
-                                <option>Sort by price</option>
-                                <option>Sort by rating</option>
-                                <option>Sort by popularity</option>
+                            <Input type="select" name="select" onChange={(e) => productsSorted(e)}>
+                                <option value="default">Default</option>
+                                <option value="price">Sort by price</option>
+                                <option value="rating">Sort by rating</option>
+                                <option value="popularity">Sort by popularity</option>
                             </Input>
                         </FormGroup>
                     </Col>
                 </Row>
             </Container>
-            <ListProducts category={query.get("category")} products={productsFilter} limit={query.get("limit")} page={query.get("page")} />
+            <ListProducts category={query.get("category")} products={products} limit={query.get("limit")} page={query.get("page")} />
             <PaginationProduct />
             <Footer />
-        </div>
+        </div >
     );
 };
 

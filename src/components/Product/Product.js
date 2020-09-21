@@ -12,7 +12,6 @@ import './Product.css';
 
 const Product = (props) => {
     const { product } = props;
-
     return (
         <div className="Product">
             <Card>
@@ -59,7 +58,7 @@ const Product = (props) => {
 
                         }
                     </div>
-                    <p>${product.price}</p>
+                    <p>${product.price.toFixed(2)}</p>
                 </CardBody>
             </Card>
         </div>
