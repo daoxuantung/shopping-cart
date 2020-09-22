@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { Table, Input, Form, Button, FormGroup } from 'reactstrap';
+import { CartContext } from '../../contexts/Cart';
 import './CartDetail.css';
 
 const CartDetail = props => {
-    const { cart, price, total, removeItem, changeAmount } = props;
-
+    const { cart, price, total, removeItem } = props;
+    const { valueUp, valueDown, changeValue } = useContext(CartContext)
     return (
         <Fragment>
             <Table>
@@ -35,9 +36,11 @@ const CartDetail = props => {
                                 <td>
                                     <FormGroup className="Cart-form">
                                         <Input
+                                            onChange={(e) => changeValue(item._id, item.size, e)}
                                             type="select"
                                             name="select"
-                                            id="size">
+                                            id="size"
+                                            value={item.size}>
                                             <option>S</option>
                                             <option>M</option>
                                             <option>L</option>
@@ -47,7 +50,11 @@ const CartDetail = props => {
                                 </td>
 
                                 <td>
-                                    <Input type="number" value={item.count} min="1" max="99" onChange={(e) => changeAmount(e.target.value, item)}></Input>
+                                    <FormGroup className="form-quantity form-quantity-center">
+                                        <span onClick={(e) => valueDown(item._id, item.size, e)}>&#8211;</span>
+                                        <div className="quantity">{item.count}</div>
+                                        <span onClick={(e) => valueUp(item._id, item.size, e)}>&#43;</span>
+                                    </FormGroup>
                                 </td>
                                 <td>${item.price * item.count}</td>
                             </tr>)

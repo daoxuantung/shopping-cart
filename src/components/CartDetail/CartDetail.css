@@ -1,5 +1,6 @@
 .CartDetail {
     margin: 5rem auto;
+    padding: 0 !important;
 }
 
 th {
@@ -42,8 +43,8 @@ th:nth-child(3) {
 
 td input {
     width: 50px !important;
-    height: 30px !important;
-    padding: 5px !important;
+    height: 36px !important;
+    padding: 8px !important;
     margin: auto;
     box-shadow: none !important;
 }
@@ -96,10 +97,11 @@ tr td:last-child {
 }
 
 .check-out {
-    background-color: #ff4e4e;
+    background-color: #ff523b !important;
     color: #fff;
     padding: 0.5rem 1.75rem;
     margin: 1rem 0;
+    margin-right: 0.75rem;
     border-radius: 20px;
     border: 0;
     transition: 0.5s;
@@ -109,8 +111,17 @@ tr td:last-child {
     box-shadow: none !important;
 }
 
-.check-out:hover {
-    background-color: #ff2e2e;
+.check-out:active {
+    background-color: #ff6e6e !important;
+}
+
+.check-out:focus-within {
+    background-color: #ff523b !important;
+}
+
+.check-out:hover,
+.check-out:visited {
+    background-color: #ff2e2e !important;
 }
 
 .cart-check {
@@ -126,10 +137,21 @@ tr td:last-child {
     align-items: center;
 }
 
-.box-content .btn a {
+.box-content a {
     color: #fff !important;
+    padding: 0.5rem 1.75rem;
+    margin: 1rem 0;
+    border-radius: 20px;
     text-decoration: none;
-    padding: 0 !important;
+    background-color: #ff523b;
+}
+
+.box-content a:hover {
+    color: #fff !important;
+}
+
+.box-content a:active {
+    background-color: #ff6e6e !important;
 }
 
 .Cart-form {
@@ -139,11 +161,13 @@ tr td:last-child {
 
 .Cart-form .form-control {
     cursor: pointer;
+    border-color: #ff523b;
 }
 
 .Cart-form .form-control:focus {
     box-shadow: none !important;
     border: 1px solid #ced4da;
+    border-color: #ff523b;
 }
 
 @media screen and (max-width: 768px) {
@@ -158,5 +182,8 @@ tr td:last-child {
     }
     .cart-info p {
         display: none;
+    }
+    td input {
+        padding: 18px !important;
     }
 }

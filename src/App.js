@@ -25,20 +25,26 @@ export default function App() {
       <CartProvider>
         <div className="App" >
           <Router>
-            <Container className="p-0">
-              <Navbar logo={Logo} />
-            </Container>
             <Switch>
               <Route exact path="/shopping-cart">
+                <Container className="p-0">
+                  <Navbar logo={Logo} />
+                </Container>
                 <Home />
               </Route>
               <Route path="/shopping-cart/products">
+                <Container className="p-0">
+                  <Navbar logo={Logo} />
+                </Container>
                 <Products />
               </Route>
-              <Route path="/shopping-cart/account">
+              <Route path="/shopping-cart/login">
                 <Account />
               </Route>
               <Route path="/shopping-cart/cart">
+                <Container className="p-0">
+                  <Navbar logo={Logo} />
+                </Container>
                 <Cart />
               </Route>
             </Switch>

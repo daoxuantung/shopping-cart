@@ -46,6 +46,7 @@ export const ProductProvider = props => {
             page: 1,
             sortBy: e.target.value
         })
+        setProducts([]);
     }
 
     const handleButtonNext = () => {
@@ -56,6 +57,7 @@ export const ProductProvider = props => {
             ...filters,
             page: filters.page += 1
         })
+        setProducts([]);
     }
 
     const handleButtonPrev = () => {
@@ -66,6 +68,7 @@ export const ProductProvider = props => {
             ...filters,
             page: filters.page -= 1
         })
+        setProducts([]);
     }
 
     const handleSelect = (number) => {
@@ -73,6 +76,7 @@ export const ProductProvider = props => {
             ...filters,
             page: number
         })
+        setProducts([]);
     }
 
     const productsFiltered = (e, category) => {
@@ -83,6 +87,7 @@ export const ProductProvider = props => {
             sortBy: ''
         })
         e.target.parentElement.parentElement.parentElement.parentElement.children[1].children[0].children[0].value = 'default';
+        setProducts([]);
     }
 
     return (

@@ -62,6 +62,15 @@
     right: -8px;
 }
 
+.Menubar-cart {
+    padding: 0 !important;
+}
+
+.Menubar-cart img {
+    width: 32px;
+    height: 32px;
+}
+
 @media screen and (max-width: 767px) {
     .Menubar-nav {
         display: none;

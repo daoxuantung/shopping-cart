@@ -15,7 +15,7 @@ const RelatedProduct = ({ category, title, productsAll }) => {
                 </Col>
                 <Col md="6">
                     {
-                        <NavLink href={`/shopping-cart/products?category=${category}`}>View More &#8594;</NavLink>
+                        category && <NavLink href={`/shopping-cart/products?category=${category}`}>View More &#8594;</NavLink>
                     }
                 </Col>
             </Row>

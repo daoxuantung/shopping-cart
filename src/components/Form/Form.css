@@ -1,0 +1,138 @@
+.Form {
+    width: 20rem;
+    height: 32rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    position: absolute;
+    top: 0;
+}
+
+.form-login {
+    left: 0;
+}
+
+.formLoginHidden {
+    left: -25rem;
+}
+
+.form-register {
+    right: -25rem;
+    display: block;
+}
+
+.formLoginShow {
+    right: 0;
+}
+
+.form-container .form-title {
+    padding: 0;
+    margin: 2.5rem 0.5rem;
+    font-size: 2.25rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0.2px 0.2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-container .form-group {
+    margin: 0 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.form-container .form-group input {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    outline: 0;
+    padding: 0 0.1rem;
+    margin: 0;
+}
+
+.form-container .form-group input:focus {
+    box-shadow: none;
+    border-bottom-color: #ff532b;
+}
+
+.form-container .form-group input:focus + label,
+.form-container .form-group input:valid + label {
+    top: -20px;
+    font-size: 1.1rem;
+    color: #ff523b;
+}
+
+.form-container .form-group label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 1rem;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+}
+
+.form-container .submit {
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container .submit button {
+    width: 16rem;
+    height: 2.75rem;
+    border: 0;
+    border-radius: 50px;
+    outline: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0.2px 0.2px 2px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background: #ff523b;
+}
+
+.form-container .submit button:active {
+    background-color: #ff6e6e !important;
+    box-shadow: none !important;
+}
+
+.form-container .content {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 29rem;
+    transform: translate(-50%, -50%);
+}
+
+.form-container .content span {
+    font-size: 1rem;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background-color: #fff;
+    color: #ff523b;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+    .Form {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}

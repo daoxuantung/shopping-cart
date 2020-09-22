@@ -37,14 +37,14 @@ const Menubar = (props) => {
                         <NavLink className='nav-link' href="/shopping-cart/products">Products</NavLink>
                     </NavItem>
                     <NavItem onClick={toggle}>
-                        <Link className='nav-link' to="/shopping-cart/account">Account</Link>
+                        <NavLink className='nav-link' href="/shopping-cart/login">Account</NavLink>
                     </NavItem>
                 </Nav>
             </div>
             <div className="cart">
-                <Link className="Menubar-cart" to="/shopping-cart/cart">
-                    <img src={CartLogo} width="100%" height="100%" alt="Cart" />
-                </Link>
+                <NavLink className="Menubar-cart" href="/shopping-cart/cart">
+                    <img src={CartLogo} alt="Cart" />
+                </NavLink>
                 <div className="cart-number">{count}</div>
             </div>
             <NavbarToggler onClick={toggle} className="mr-2" />
