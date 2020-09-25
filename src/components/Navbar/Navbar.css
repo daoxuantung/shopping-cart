@@ -3,13 +3,21 @@
     position: relative;
 }
 
+.Menubar-nav .navbar-nav .nav-item:hover {
+    border-bottom-width: 1px;
+}
+
 .nav-item {
+    color: #000;
     margin-left: 1rem;
     position: relative;
+    border-color: #ff523b;
+    border-style: solid;
+    border-width: 0;
 }
 
 .nav-link {
-    color: #000 !important;
+    color: inherit !important;
     transition: 0.3s;
 }
 
@@ -70,7 +78,6 @@
     width: 32px;
     height: 32px;
 }
-
 @media screen and (max-width: 767px) {
     .Menubar-nav {
         display: none;

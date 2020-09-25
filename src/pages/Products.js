@@ -12,10 +12,10 @@ export default function Products() {
     }, [])
     return (
         <div className="Products">
-            <Route exact path="/shopping-cart/products">
+            <Route exact path="/products">
                 <Product />
             </Route>
-            <Route path="/shopping-cart/products/:id">
+            <Route path="/products/:id">
                 <ProductDetail />
             </Route>
         </div>

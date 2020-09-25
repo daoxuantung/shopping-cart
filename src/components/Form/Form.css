@@ -5,7 +5,6 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    background-color: #fff;
 }
 
 .form-container {
@@ -14,6 +13,7 @@
     transition: 0.3s;
     position: absolute;
     top: 0;
+    background-color: #fff;
 }
 
 .form-login {
@@ -45,44 +45,45 @@
 
 .form-container .form-group {
     margin: 0 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     position: relative;
 }
 
 .form-container .form-group input {
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid #bbb;
+    font-size: 14px;
     outline: 0;
-    padding: 0 0.1rem;
+    padding: 0 0.6rem;
     margin: 0;
 }
 
 .form-container .form-group input:focus {
     box-shadow: none;
-    border-bottom-color: #ff532b;
 }
 
 .form-container .form-group input:focus + label,
 .form-container .form-group input:valid + label {
-    top: -20px;
-    font-size: 1.1rem;
-    color: #ff523b;
+    top: -13px;
+    font-size: 1rem;
+    color: #84bfff;
+    background-color: #fff;
 }
 
 .form-container .form-group label {
+    padding: 0 0.1rem;
+    overflow: hidden;
     position: absolute;
-    left: 0;
+    left: 0.5rem;
     top: 10px;
-    font-size: 1rem;
+    font-size: 14px;
     color: #aaa;
     pointer-events: none;
     transition: 0.2s ease-in-out;
+    z-index: 1000;
 }
 
 .form-container .submit {
     padding: 0;
-    margin: 2rem 0;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
@@ -100,11 +101,11 @@
     text-shadow: 0.2px 0.2px 2px rgba(0, 0, 0, 0.2);
     padding: 0.5rem;
     margin: 0.5rem;
-    background: #ff523b;
+    background: #84bfff;
 }
 
 .form-container .submit button:active {
-    background-color: #ff6e6e !important;
+    background-color: #84cece !important;
     box-shadow: none !important;
 }
 
@@ -125,8 +126,20 @@
     border: 0;
     outline: 0;
     background-color: #fff;
-    color: #ff523b;
+    color: #84bfff;
     cursor: pointer;
+}
+
+.label {
+    font-size: 13px;
+    color: red;
+    margin: 0.5rem 0;
+    padding-left: 0.5rem;
+}
+
+.space {
+    margin: 0.5rem 0;
+    height: 19.2px;
 }
 
 @media screen and (max-width: 576px) {

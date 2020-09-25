@@ -16,7 +16,7 @@ const FeaturedProduct = () => {
                 {
                     featuredProducts.length ? featuredProducts.map(product =>
                         <Col md="3" key={product._id}>
-                            <Link className="link" to={`/shopping-cart/products/${product._id}`}>
+                            <Link className="link" to={`/products/${product._id}`}>
                                 <Product product={product} />
                             </Link>
                         </Col>) : products.map(product =>

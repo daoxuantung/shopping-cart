@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { ProductContext } from '../contexts/Product';
+import { NotificationManager } from 'react-notifications';
 
 export const CartContext = createContext();
 
@@ -15,7 +16,7 @@ export const CartProvider = (props) => {
     const addToCart = (id) => {
         const index = cart.findIndex(item => item._id === id && item.size === size)
         const productFinded = productsAll.find(product => product._id === id);
-        console.log(index);
+        NotificationManager.success(`Add '${productFinded.title}' to cart successfully!`, '', 2000);
         if (index > -1) {
             setCart([...cart.slice(0, index), { ...cart[index], count: cart[index].count + countProduct }, ...cart.slice(index + 1)])
 
@@ -48,8 +49,7 @@ export const CartProvider = (props) => {
         setSize(e.target.value);
     }
 
-    const valueUp = (id, size, e) => {
-        const index = cart.findIndex(item => item._id === id && item.size === size);
+    const valueUp = (index, e) => {
         const value = e.target.parentElement.children[1].innerText;
         if (parseInt(value) >= 99) {
             return;
@@ -57,18 +57,12 @@ export const CartProvider = (props) => {
         setCart([...cart.slice(0, index), { ...cart[index], count: cart[index].count + 1 }, ...cart.slice(index + 1)])
     }
 
-    const valueDown = (id, size, e) => {
-        const index = cart.findIndex(item => item._id === id && item.size === size);
+    const valueDown = (index, e) => {
         const value = e.target.parentElement.children[1].innerText;
         if (parseInt(value) <= 1) {
             return;
         }
         setCart([...cart.slice(0, index), { ...cart[index], count: cart[index].count - 1 }, ...cart.slice(index + 1)])
-    }
-
-    const changeValue = (id, size, e) => {
-        const index = cart.findIndex(item => item._id === id && item.size === size);
-        setCart([...cart.slice(0, index), { ...cart[index], size: e.target.value }, ...cart.slice(index + 1)])
     }
 
     useEffect(() => {
@@ -90,7 +84,7 @@ export const CartProvider = (props) => {
     }, [cart, price])
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, price, total, removeItem, count, countProduct, countUp, countDown, changeSize, size, valueUp, valueDown, changeValue }} >
+        <CartContext.Provider value={{ cart, addToCart, price, total, removeItem, count, countProduct, countUp, countDown, changeSize, size, valueUp, valueDown }} >
             {props.children}
         </CartContext.Provider >
     );

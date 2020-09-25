@@ -26,8 +26,8 @@ const Products = () => {
             <Container className="ProductContent">
                 {
                     query.get("category") ?
-                        <h3 className="title ProductContent-title">{query.get("category").slice(0, 1).toUpperCase() + query.get("category").slice(1)}</h3>
-                        : <h3 className="title ProductContent-title">All Products</h3>
+                        <h3 className="title ProductContent-title">Red Store / {query.get("category").slice(0, 1).toUpperCase() + query.get("category").slice(1)}</h3>
+                        : <h3 className="title ProductContent-title">Red Store / All Products</h3>
                 }
                 <Row className="w-100 m-0 flex-row justify-content-between">
                     <Col md="6">
@@ -38,14 +38,14 @@ const Products = () => {
                                         const string = category.slice(0, 1).toUpperCase() + category.slice(1);
                                         return (
                                             <NavItem key={index} active={query.get("category") === category} onClick={(e) => productsFiltered(e, category)}>
-                                                <Link className="nav-link" to={`/shopping-cart/products?category=${category}`}>{string}</Link>
+                                                <Link className="nav-link" to={`/products?category=${category}`}>{string}</Link>
                                             </NavItem>
 
                                         )
                                     } else {
                                         return (
                                             <NavItem key={index} onClick={(e) => productsFiltered(e, category)} active={!query.get("category")}>
-                                                <Link className="nav-link" to={`/shopping-cart/products`}>All</Link>
+                                                <Link className="nav-link" to={`/products`}>All</Link>
                                             </NavItem>
                                         )
                                     }

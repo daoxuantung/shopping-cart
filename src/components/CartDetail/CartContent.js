@@ -1,11 +1,11 @@
 import React, { Fragment, useContext } from 'react';
-import { Table, Input, Form, Button, FormGroup } from 'reactstrap';
+import { Table, Form, Button, FormGroup } from 'reactstrap';
 import { CartContext } from '../../contexts/Cart';
 import './CartDetail.css';
 
 const CartDetail = props => {
     const { cart, price, total, removeItem } = props;
-    const { valueUp, valueDown, changeValue } = useContext(CartContext)
+    const { valueUp, valueDown } = useContext(CartContext)
     return (
         <Fragment>
             <Table>
@@ -35,25 +35,15 @@ const CartDetail = props => {
                                 </td>
                                 <td>
                                     <FormGroup className="Cart-form">
-                                        <Input
-                                            onChange={(e) => changeValue(item._id, item.size, e)}
-                                            type="select"
-                                            name="select"
-                                            id="size"
-                                            value={item.size}>
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </Input>
+                                        <div>{item.size}</div>
                                     </FormGroup>
                                 </td>
 
                                 <td>
                                     <FormGroup className="form-quantity form-quantity-center">
-                                        <span onClick={(e) => valueDown(item._id, item.size, e)}>&#8211;</span>
+                                        <span onClick={(e) => valueDown(index, e)}>&#8211;</span>
                                         <div className="quantity">{item.count}</div>
-                                        <span onClick={(e) => valueUp(item._id, item.size, e)}>&#43;</span>
+                                        <span onClick={(e) => valueUp(index, e)}>&#43;</span>
                                     </FormGroup>
                                 </td>
                                 <td>${item.price * item.count}</td>

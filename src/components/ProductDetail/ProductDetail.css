@@ -84,6 +84,7 @@
 
 .ProductDetail-form label {
     margin-right: 1rem;
+    margin-bottom: 0;
 }
 
 .title-link a {
@@ -123,8 +124,12 @@
     align-items: center;
     width: 2rem;
     height: 1.5rem;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     border: 1px solid #ff523b;
+}
+
+.quantity-text {
+    margin-right: 1rem;
 }
 
 @media screen and (max-width: 768px) {

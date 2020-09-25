@@ -90,9 +90,17 @@ export const ProductProvider = props => {
         setProducts([]);
     }
 
+    const setProductsDefault = () => {
+        setProducts([]);
+        setFilter({
+            ...filters,
+            page: 1,
+        })
+    }
+
     return (
         <ProductContext.Provider
-            value={{ products, latedProducts, featuredProducts, productsSorted, productsFiltered, handleButtonNext, handleButtonPrev, handleSelect, filters, totalPages, productsAll }}
+            value={{ products, latedProducts, featuredProducts, productsSorted, productsFiltered, handleButtonNext, handleButtonPrev, handleSelect, filters, totalPages, productsAll, setProductsDefault }}
         >
             {props.children}
         </ProductContext.Provider >

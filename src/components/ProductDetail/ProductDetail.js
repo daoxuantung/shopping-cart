@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState, Fragment } from 'react';
-
+import { NotificationContainer } from 'react-notifications';
 import { ProductContext } from '../../contexts/Product';
 import {
     useParams, Link
@@ -51,16 +51,16 @@ export default function ProductDetail() {
                                 </Col>
                                 <Col md="6" className="ProductDetail-content">
                                     <p className="title-link">
-                                        <Link to="/shopping-cart">Home&nbsp;</Link>
+                                        <Link to="">Home&nbsp;</Link>
                                 /
-                                <Link to="/shopping-cart/products">&nbsp;Products&nbsp;</Link>
+                                <Link to="/products">&nbsp;Products&nbsp;</Link>
                                 /
                                 &nbsp;{product.title}
                                     </p>
                                     <h2>{product.description}</h2>
                                     <h4>${product.price}</h4>
                                     <FormGroup className="ProductDetail-form">
-                                        <Label>Size</Label>
+                                        <Label>Size:</Label>
                                         <Input
                                             onChange={(e) => changeSize(e)}
                                             type="select"
@@ -71,8 +71,8 @@ export default function ProductDetail() {
                                             <option>XL</option>
                                         </Input>
                                     </FormGroup>
-                                    <div>Quantity</div>
                                     <FormGroup className="form-quantity">
+                                        <div className="quantity-text">Quantity:</div>
                                         <span onClick={(e) => countDown(e)}>&#8211;</span>
                                         <div className="quantity">{countProduct}</div>
                                         <span onClick={(e) => countUp(e)}>&#43;</span>
@@ -108,7 +108,7 @@ export default function ProductDetail() {
                                     <h3 className="RelatedProducts-title title">Related Products</h3>
                                 </Col>
                                 <Col md="6">
-                                    <NavLink href={`/shopping-cart/products?category=`}>View More &#8594;</NavLink>
+                                    <NavLink href={`/products?category=`}>View More &#8594;</NavLink>
                                 </Col>
                             </Row>
                             <Row className="w-100 m-0">
@@ -123,6 +123,7 @@ export default function ProductDetail() {
                 }
             </Container >
             <Footer />
+            <NotificationContainer />
         </Fragment>
     );
 

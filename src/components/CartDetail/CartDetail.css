@@ -159,17 +159,6 @@ tr td:last-child {
     width: 4rem;
 }
 
-.Cart-form .form-control {
-    cursor: pointer;
-    border-color: #ff523b;
-}
-
-.Cart-form .form-control:focus {
-    box-shadow: none !important;
-    border: 1px solid #ced4da;
-    border-color: #ff523b;
-}
-
 @media screen and (max-width: 768px) {
     .cart-text {
         margin-left: 0.75rem;
