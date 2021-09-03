@@ -1,0 +1,14 @@
+name: 5h-every-day-cron
+on:
+  schedule:
+    - cron: "0 20 * * *"
+jobs:
+  cron:
+    name: Trigger Call API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update user number
+        run: |
+          curl --request POST \
+          --url '${{ secrets.DOMAIN_NAME }}/api/batchs/users-number' \
+          --header 'x-secret-key: ${{ secrets.API_SECRET_KEY }}'
